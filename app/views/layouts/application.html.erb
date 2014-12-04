@@ -2,10 +2,8 @@
 <html>
 <head>
   <title>Tech Talent Twitter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<!-- Latest compiled and minified CSS -->
+
+  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -13,21 +11,25 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-default">
+<div class="navbar navbar-default bla">
   <div class="navbar-header">
+
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Twitter for TTS</a>
+    <a class="navbar-brand" href="/tweets">Twitter for TTS</a>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Active</a></li>
-      <li><a href="#">Link</a></li>
+     <li><%= link_to "Sign In", user_session_path, class: "btn btn warning" %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn warning" %></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -59,6 +61,10 @@
     </ul>
   </div>
 </div>
+
+<!--- Devise Notice/Alert -->
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
