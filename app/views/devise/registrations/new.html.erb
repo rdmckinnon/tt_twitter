@@ -9,6 +9,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :handle %><br />
+    <%= f.email_field :handle, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.email_field :address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.email_field :latitude, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
